@@ -1,0 +1,17 @@
+{{!-- List all the posts created by the user --}}
+{{#each posts as |post| }}
+<div class="row align-center mb-5">
+  <div class="col-md-6">
+    <h2> <a href="/post/{{post.id}}">Title:{{post.title}}</a></h2>
+  </div>
+  <div class="col-md-6">
+    <p>Content:{{post.content}}</p>
+  </div>
+</div>
+{{/each}}
+
+
+{{!-- Button to create a new post/ bring us to the new post form --}}
+<a href="/dashboard/newpost">
+  <button>New Post</button>
+</a>
