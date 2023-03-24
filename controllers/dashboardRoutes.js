@@ -44,7 +44,7 @@ router.get("/post/:id", withAuth, async (req, res) => {
 
     const post = postData.get({ plain: true });
 
-    res.render("painting", { post, loggedIn: req.session.loggedIn });
+    res.render("post", { post, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

@@ -31,7 +31,9 @@ router.get("/", async (req, res) => {
 // FETCH A SINGLE POST BY ID
 router.get("/post/:id", async (req, res) => {
   try {
-    const postData = await Post.findOne({});
+    const postData = await Post.findOne({
+      where: { id: req.params}
+    });
 
     const post = postData.get({ plain: true });
     console.log(post);

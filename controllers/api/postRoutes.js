@@ -6,7 +6,7 @@ const withAuth = require("../../utils/auth");
 // GET all posts
 router.get("/", async (req, res) => {
   try {
-    const allPosts = await Blog.findAll({
+    const allPosts = await Post.findAll({
       attributes: ["id", "title", "content"],
       include: [
         {
