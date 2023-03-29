@@ -1,9 +1,32 @@
 <section class="container">
   <h3 class="container">All Posts</h3>
-  <h4>Opening Hour:</h4>
+  <h4>
+    {{ post.title }}
+  </h4>
   <section class="flex-row justify-center">
-    {{#each posts as |post|}}
-    {{> post-details}}
-    {{/each}}
+    <p>
+      {{ post.content }}
+    </p>
+    <a href="/post/edit/{{ post.id }}">
+    Edit</a>
   </section>
 </section>
+
+<form id="new-comment-form">
+
+  <label for="content">Content</label>
+  <textarea type="text" id="content"></textarea>
+
+  <button type="submit">Submit</button>
+  <input type="text"
+  id="id"
+  value="{{ post.id }}"
+  class="hide">
+</form>
+{{#each post.comments}}
+<div class="card mb-2 item">
+<p>{{comment_content}}</p>
+<p>{{user.username}}</p>
+</div>
+{{/each}}
+<script src="/js/comment.js"></script>

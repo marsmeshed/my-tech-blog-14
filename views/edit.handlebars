@@ -1,0 +1,38 @@
+<section class="container">
+
+  <form
+  id="form">
+    <h3 class="container">All Posts</h3>
+  <label>
+    title
+  </label>
+  
+  <input type="text"
+  id="text"
+  value="{{ post.title }}">
+ <input type="text"
+  id="id"
+  value="{{ post.id }}"
+  class="hide">
+  </input>
+  <section class="flex-row justify-center">
+    <label>
+    content
+  </label>
+
+    <textarea
+    id="content">
+      {{ post.content }}
+    </textarea>
+    <button
+    type="submit"
+    id="confirm">
+        Confirm
+    </button>
+    </form>
+    <button id="delete">
+        Delete
+    </button>
+  </section>
+</section>
+<script src="/js/edit.js"></script>
